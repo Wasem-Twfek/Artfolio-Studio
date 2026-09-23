@@ -1,82 +1,68 @@
 # Artfolio Studio
 
-Artfolio Studio is a lightweight, easy-to-customize portfolio starter built with PHP, HTML, CSS, and JavaScript. It gives you card-based templates, simple PHP entry points, and an organized asset structure so you can publish an artist portfolio quickly.
+A lightweight PHP/HTML/CSS/JavaScript portfolio-template project focused on reusable profile cards, visual layouts, and simple server-rendered pages.
 
-Table of contents
-- Overview
-- Quick start
-- Database (optional)
-- Project structure
-- Customization notes
-- Deployment
-- Contributing
-- License & contact
+## What it demonstrates
 
-Overview
---------
-This project contains static templates and small PHP pages (no framework). It's intentionally minimal so you can adapt the UI, swap images, or add a backend without a heavy toolchain.
+- Responsive portfolio-style page layouts
+- Reusable card and profile templates
+- Vanilla JavaScript interactions
+- Small PHP entry points for search and authentication-related pages
+- Optional MySQL integration
+- Asset organization for images, styles, and page-specific components
 
-Quick start (local)
--------------------
-Prerequisite: PHP installed locally (PHP 7.2+ recommended).
+## Project structure
 
-1. Clone the repo and open it:
+~~~text
+.
+├── index.php              # Main entry point
+├── sign.php               # Sign-in/sign-up page
+├── sear.php               # Search page
+├── database_setup.sql     # Optional database schema
+├── img/                   # Visual assets and examples
+├── js/                    # Client-side JavaScript
+├── pro/                   # Page/component styles
+└── sign/                  # Authentication/database-related PHP
+~~~
 
-```bash
-git clone <your-repo-url>
-cd "ARTFOLIO_END-main"
-```
+## Local development
 
-2. Run a local PHP server and open the site in your browser:
+### Prerequisites
 
-```bash
+- PHP 8+
+- MySQL (only if database features are enabled)
+
+Start a local PHP server:
+
+~~~bash
 php -S localhost:8000
-# Open: http://localhost:8000/index.php
-```
+~~~
 
-3. To use search or sign features, try `sear.php` and `sign.php` from the site navigation (these are simple PHP pages that can be extended).
+Then open:
 
-Database (optional)
--------------------
-This project includes `database_setup.sql` as a starting point if you want to add a MySQL database.
+~~~text
+http://localhost:8000/index.php
+~~~
 
-Import the SQL (example using MySQL client):
+## Optional database configuration
 
-```bash
-mysql -u your_db_user -p your_database_name < database_setup.sql
-```
+The repository includes a starter MySQL schema in database_setup.sql.
 
-If you enable a DB connection, update the connection file at `sign/db_connect.php` (or your preferred path) with your credentials. The repository currently contains `sign/db_connect.php` for reference.
+Database connection settings are read from environment variables:
 
-Project structure (key files)
------------------------------
-- `index.php` — landing / main entry
-- `sign.php` — sign-in / sign-up hooks
-- `sear.php` — search page
-- `card_*.html`, `protofly_user_*.html` — example card and profile templates you can reuse
-- `img/` — image assets (replace with your own optimized images)
-- `js/` — front-end scripts
-- `pro/` — scoped CSS files for pages and components
-- `database_setup.sql` — starter SQL if you want to add a DB
-- `sign/db_connect.php` — example DB connector location
+~~~text
+ARTFOLIO_DB_HOST=localhost
+ARTFOLIO_DB_NAME=artfolio_db
+ARTFOLIO_DB_USER=your_database_user
+ARTFOLIO_DB_PASSWORD=your_database_password
+~~~
 
-Customization notes
--------------------
-- Replace images in `img/` with optimized images (webp/avif where possible).
-- Edit styles in `pro/` to match your colors and typography; the CSS is modular.
-- Add interactivity in `js/` or connect templates to a backend API for dynamic content.
-- Keep templates `card_*.html` as components — copy and adapt per artist or project.
+Local database connection files and real credentials should remain untracked.
 
-Deployment
-----------
-Upload the project to any PHP-capable host (shared hosting, managed PHP host, or a VPS). Ensure:
-- `index.php` is reachable at the site root
-- File permissions allow the web server to read assets
-- If using a database, update credentials and restrict access accordingly
+## Portfolio context
 
-Security & maintenance notes
----------------------------
-- Do not commit production credentials. Use environment variables or a config file excluded from version control.
-- Sanitize and validate user input if you extend sign/search pages — the included PHP pages are intentionally minimal.
-- Optimize large images before publishing to improve page load.
+This is a frontend/PHP portfolio-template project from the earlier part of the software-development portfolio. It is useful as evidence of HTML/CSS/JavaScript/PHP experience, while the newer full-stack and AI projects are the primary portfolio pieces.
 
+## License
+
+Add a license when the project licensing decision is finalized.
