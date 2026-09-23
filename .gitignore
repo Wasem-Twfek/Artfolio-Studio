@@ -1,0 +1,14 @@
+# PHP / local configuration
+.env
+.env.*
+!.env.example
+sign/db_connect.php
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local runtime files
+*.log
