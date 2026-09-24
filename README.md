@@ -58,11 +58,3 @@ ARTFOLIO_DB_PASSWORD=your_database_password
 ~~~
 
 Local database connection files and real credentials should remain untracked.
-
-## Portfolio context
-
-This is a frontend/PHP portfolio-template project from the earlier part of the software-development portfolio. It is useful as evidence of HTML/CSS/JavaScript/PHP experience, while the newer full-stack and AI projects are the primary portfolio pieces.
-
-## License
-
-Add a license when the project licensing decision is finalized.
